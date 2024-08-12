@@ -110,7 +110,7 @@ type rdk = {
 	choice: Array<number>;
 	choiceTime: Array<number>;
 	completed: Array<boolean>;
-	totalReactionTIme: Array<number>;
+	totalReactionTIme: Array<Array<number>>;
 	correct: Array<boolean>;
 	attempts: Array<number>;
 	player: Array<number>;
@@ -167,7 +167,7 @@ const baseRDK: rdk = {
 	incorrectDirection: [[], [], [], [], [], [], [], []],
 	completionTime: 0,
 	reactionTime: [[], [], [], [], [], [], [], []],
-	totalReactionTIme: [0, 0, 0, 0, 0, 0, 0, 0],
+	totalReactionTIme: [[], [], [], [], [], [], [], []],
 	timeStamp: [0, 0, 0, 0, 0, 0, 0, 0],
 };
 let state: State = {
@@ -732,8 +732,8 @@ function updateCollabStateOnResponse(
 
 	if (correct == true) {
 		if (player === "player1") {
-			state.RDK.totalReactionTIme[id] = totalRt;
-			state.P1RDK.totalReactionTIme[id] = totalRt;
+			state.RDK.totalReactionTIme[id].push(totalRt);
+			state.P1RDK.totalReactionTIme[id].push(totalRt);
 			state.RDK.correct[id] = true;
 			state.RDK.reactionTime[id].push(rt);
 			state.P1RDK.reactionTime[id].push(rt);
@@ -743,8 +743,8 @@ function updateCollabStateOnResponse(
 			state.P1RDK.attempts[id] += 1;
 			state.RDK.player[id] = 1;
 		} else if (player === "player2") {
-			state.RDK.totalReactionTIme[id] = totalRt;
-			state.P2RDK.totalReactionTIme[id] = totalRt;
+			state.RDK.totalReactionTIme[id].push(totalRt);
+			state.P2RDK.totalReactionTIme[id].push(totalRt);
 			state.P2RDK.reactionTime[id].push(rt);
 			state.RDK.correct[id] = true;
 			state.RDK.reactionTime[id].push(rt);
@@ -758,10 +758,12 @@ function updateCollabStateOnResponse(
 		if (player === "player1") {
 			state.P1RDK.attempts[id] += 1;
 			state.P1RDK.reactionTime[id].push(rt);
+			state.P1RDK.totalReactionTIme[id].push(totalRt);
 			state.P1RDK.incorrectDirection[id].push(state.P1RDK.direction[id]);
 		} else if (player === "player2") {
 			state.P2RDK.attempts[id] += 1;
 			state.P2RDK.reactionTime[id].push(rt);
+			state.P2RDK.totalReactionTIme[id].push(totalRt);
 			state.P2RDK.incorrectDirection[id].push(state.P2RDK.direction[id]);
 		}
 	}
@@ -860,7 +862,7 @@ function checkResponse(
 				if (state.P1RDK.mostRecentChoice !== id) {
 				} else {
 					if (state.P1RDK.direction[id] === data) {
-						state.P1RDK.totalReactionTIme[id] = totalRt;
+						state.P1RDK.totalReactionTIme[id].push(totalRt);
 						state.P1RDK.reactionTime[id].push(rt);
 						state.P1RDK.completed[id] = true;
 						state.P1RDK.attempts[id] += 1;
@@ -876,6 +878,7 @@ function checkResponse(
 					} else if (state.RDK.direction[id] !== data) {
 						state.P1RDK.attempts[id] += 1;
 						state.P1RDK.reactionTime[id].push(rt);
+						state.P1RDK.totalReactionTIme[id].push(totalRt);
 						state.P1RDK.incorrectDirection[id].push(state.P1RDK.direction[id]);
 						chooseNewDirection(state, "player1", id, stage, block);
 					}
@@ -885,7 +888,7 @@ function checkResponse(
 				if (state.P2RDK.mostRecentChoice !== id) {
 				} else {
 					if (state.P2RDK.direction[id] === data) {
-						state.P2RDK.totalReactionTIme[id] = totalRt;
+						state.P2RDK.totalReactionTIme[id].push(totalRt);
 						state.P2RDK.reactionTime[id].push(rt);
 						state.P2RDK.completed[id] = true;
 						state.P2RDK.attempts[id] += 1;
@@ -901,6 +904,7 @@ function checkResponse(
 					} else if (state.RDK.direction[id] !== data) {
 						state.P2RDK.attempts[id] += 1;
 						state.P2RDK.reactionTime[id].push(rt);
+						state.P2RDK.totalReactionTIme[id].push(totalRt);
 						state.P2RDK.incorrectDirection[id].push(state.P2RDK.direction[id]);
 						chooseNewDirection(state, "player2", id, stage, block);
 					}
@@ -1260,6 +1264,7 @@ function startPracticeBreak(block: string) {
 				data: blocks[0],
 			})
 		);
+		writeData(dataArray);
 	}
 }
 
@@ -1577,7 +1582,7 @@ function practiceCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.stage,
 					data.block
 				);
-				checkCompleted(state, data.block, null);
+				endTrialEarly(state, data.block, "player1");
 			}
 			if (ws === connections.player2) {
 				checkResponse(
@@ -1590,7 +1595,7 @@ function practiceCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.stage,
 					data.block
 				);
-				checkCompleted(state, data.block, null);
+				endTrialEarly(state, data.block, "player2");
 			}
 			break;
 		case "destroy":

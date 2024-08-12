@@ -10,8 +10,9 @@ const instructionsHTML = `
 <div class = "instructions" align="center">
 <p> In this experiment, you will be asked to select an image displaying a number of dots moving on the screen. Within this image, some of the dots will be moving in the same direction (either left or right).
  and others will be moving in a random direction. Your task is to identify the direction in which the majority of the dots are moving. This will vary from very easy, where many of the dots are moving
- in the same direction, to very difficult, where only a few dots are moving in the same direction, responding as quickly and accurately as you can. </p>
-<p> There are two blocks consisting of 20 6-second trials, 40 trials in total. In one block you will perform this by yourself, and in the other you will be paired with another participant.
+ in the same direction, to very difficult, where only a few dots are moving in the same direction, responding as quickly and accurately as you can.</p>
+<p> There are two blocks consisting of 20 6-second trials, 40 trials in total. In one block you will perform this by yourself, and in the other you will be paired with another participant. <br>
+The experiment will take roughly 20 minutes to complete. </p>
 <p> We appreciate your participation</p>
 <p> Please press enter to view the practice instructions </p>
 </div>
@@ -50,10 +51,11 @@ const practiceInstructionsHTML = `
 </div>
 <div class = "practiceInstructions" align="center">
 <p> In this block, you will complete 10 trials, 5 by yourself and 5 with your partner. You are free to select the order in which you complete the different dot motion difficulties. <br>
-Initially, the trials will be 20 seconds with a 10 second break. Later it will switch to 6 second trials with a 6 second break, matching the experiment. <br>
+Initially, the trials will be 12 seconds with a 12 second break. Later it will switch to 6 second trials with a 6 second break, matching the experiment. <br>
 When you think you know which direction the dots are moving in, you can respond with "Z" for left and "X" for right. <br>
+If you respond incorrectly, there will be a 500ms delay before you can respond again. <br>
 Please try and complete each trial as quickly and accurately as possible. <br>
-Please enter to begin the block.
+Please enter to begin the block
 </p>
 </div>
 `;
@@ -96,11 +98,12 @@ const sepInstructionsHTML = `
 <div class = "sepInstructions align="center">
 <p> 
 In this block, you will complete the 20 trials by yourself. You are free to select the order in which you complete the different dot motion difficulties. 
-Each trial will last 6 seconds, with a 6 second break inbetween trials. 
+Each trial will last 6 seconds, with a 6 second break inbetween trials. <br>
+Remember to respond with "Z" for left and "X" for right, and if you respond incorrectly there is a 500ms penalty!
 </p>
 <p>
 Please try and complete each trial as quickly and accurately as possible. <br>
- Please enter to begin the block.
+ Please press enter to begin the block
 </p>
 </div>
 `;
@@ -158,8 +161,9 @@ const collabInstructionsHTML = `
 </div>
 <div class = "collabInstructions" align="center">
 <p> In this block, you will complete 20 trials paired with another participant. You are free to select the order in which you complete the different dot motion difficulties, although you cannot complete one that your partner is completing, 
-or has already completed. Each trial will last 6 seconds, with a 6 second break inbetween trials. </p>
-<p> Please try and complete each trial as quickly and accurately as possible.</p> 
+or has already completed. Each trial will last 6 seconds, with a 6 second break inbetween trials. <br> 
+Remember to respond with "Z" for left and "X" for right, and if you respond incorrectly there is a 500ms penalty! </p>
+<p> Please try and complete each trial as quickly and accurately as possible. </p> 
 <p> Please press enter to begin the block </p>
 `;
 let collabInstructionsHandler = null;

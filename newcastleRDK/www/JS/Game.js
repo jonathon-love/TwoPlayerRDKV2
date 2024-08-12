@@ -373,7 +373,6 @@ export default class Game {
 			this.displayDifficultyText(div, difficulty, i); // Display difficulty text
 			this.container.appendChild(div);
 		}
-		console.log(this.divs.uncompleted);
 	}
 	handleInstructionsBreak(stage, block, data) {
 		if (stage === "game") {
@@ -800,7 +799,6 @@ export default class Game {
 		const y = event.clientY;
 		const width = window.innerWidth;
 		const height = window.innerHeight;
-		console.log("adding mouse move");
 		this.ws.send(
 			JSON.stringify({
 				stage: this.stage,
@@ -1073,7 +1071,6 @@ export default class Game {
 		// Find the correct div based on divID
 		const selectedDiv = divlist.find((div) => div.id === divID);
 		if (!selectedDiv) {
-			console.error("Div not found");
 			this.restoreCompletedImages(this.divs);
 			return;
 		}
