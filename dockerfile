@@ -1,9 +1,9 @@
-FROM ubuntu:22.04
-RUN apt-get update && apt-get install -y nodejs npm
+FROM node:22
 
 WORKDIR /tmp
 COPY  newcastleRDK newcastleRDK
-COPY package*.json ./
+WORKDIR /tmp/newcastleRDK
+
 RUN npm install
 
 EXPOSE 3000

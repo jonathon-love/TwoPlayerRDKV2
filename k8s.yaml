@@ -1,0 +1,145 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: luke-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: luke-storage
+  local:
+    path: /storage/lukedata
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - jamovi4jonathon1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+  name: lukeserver
+spec:
+  selector:
+    app: lukeserver
+  ports:
+    - name: server
+      port: 3000
+      protocol: TCP
+    - name: data
+      port: 80
+      protocol: TCP
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: lukeserver-pvc
+spec:
+  storageClassName: luke-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lukeserver
+  labels:
+    app: lukeserver
+spec:
+  selector:
+    matchLabels:
+      app: lukeserver
+  template:
+    metadata:
+      labels:
+        app: lukeserver
+    spec:
+      containers:
+        - name: lukeserver
+          image: jonathonlove/lukeserver
+          imagePullPolicy: Always
+          env:
+            - name: SERVER_LOG_PATH
+              value: /data
+            # - name: DEBUG
+            #   value: "express:*"
+          volumeMounts:
+            - mountPath: "/data"
+              name: storage
+          resources:
+            requests:
+              cpu: "100m"
+        - name: nginx
+          image: nginx
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html/data"
+              name: storage
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: nginx.conf
+          resources:
+            requests:
+              cpu: "100m"
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: lukeserver-pvc
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  nginx.conf: |-
+      server {
+          listen       80;
+          listen  [::]:80;
+          server_name  localhost;
+
+          location / {
+              root   /usr/share/nginx/html;
+              index  index.html index.htm;
+              autoindex on;
+          }
+      }
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: luke-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+  - host: lukespirit.duckdns.org
+    http:
+      paths:
+      - path: /lukespirit(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: lukeserver
+            port:
+              number: 3000
+      - path: /()(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: lukeserver
+            port:
+              number: 80
+---

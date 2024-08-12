@@ -4,7 +4,8 @@ import { loadInstructions } from "../Content/Forms/instructions.js";
 import Game from "./Game.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	const ws = new WebSocket("ws://localhost:3000/coms");
+	const wsURL = `ws://${ window.location.host }${ window.location.pathname }coms`;
+	const ws = new WebSocket(wsURL);
 	console.log("Connecting to the server...");
 
 	let game = null; // Reference to the Game instance
