@@ -103,7 +103,7 @@ const expValues = {
 REMEBER TO REMOVE OR CHANGE THIS
 */
 const testConsts = {
-	skipIntro: false,
+	skipIntro: true,
 };
 /*
 Base RDK is used to reset the state between trials and blocks. 
@@ -121,7 +121,7 @@ const baseRDK: rdk = {
 	direction: [],
 	incorrectDirection: [[], [], [], [], [], [], [], []],
 	completionTime: [],
-	reactionTime: [[0], [0], [0], [0], [0], [0], [0], [0]],
+	reactionTime: [[], [], [], [], [], [], [], []],
 	totalReactionTIme: [0, 0, 0, 0, 0, 0, 0, 0],
 	timeStamp: [0, 0, 0, 0, 0, 0, 0, 0],
 };
@@ -690,6 +690,7 @@ function updateCollabStateOnResponse(
 			state.P1RDK.totalReactionTIme[id] = totalRt;
 			state.RDK.correct[id] = true;
 			state.RDK.reactionTime[id].push(rt);
+			state.P1RDK.reactionTime[id].push(rt);
 			state.RDK.completed[id] = true;
 			state.P1RDK.completed[id] = true;
 			state.P1RDK.correct[id] = true;
@@ -698,6 +699,7 @@ function updateCollabStateOnResponse(
 		} else if (player === "player2") {
 			state.RDK.totalReactionTIme[id] = totalRt;
 			state.P2RDK.totalReactionTIme[id] = totalRt;
+			state.P2RDK.reactionTime[id].push(rt);
 			state.RDK.correct[id] = true;
 			state.RDK.reactionTime[id].push(rt);
 			state.RDK.completed[id] = true;
