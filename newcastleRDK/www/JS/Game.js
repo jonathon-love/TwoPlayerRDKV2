@@ -43,7 +43,7 @@ export default class Game {
 		this.recordMousepos = this.recordMousepos.bind(this);
 		this.responseHandler = null;
 		this.expConsts = {
-			dotRad: 1.5,
+			dotRad: 1.75,
 			apertureRad: 50,
 			dotColor: "rgb(255,255,255)",
 			dotSpeed: 0.75,
