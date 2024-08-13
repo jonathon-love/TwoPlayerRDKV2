@@ -54,6 +54,7 @@ export default class Game {
 			pauseDuration: 500,
 			blockBreak: 20,
 			breakDuration: 10,
+			blockLength: 30,
 		};
 		// Reaction time vars below
 		this.breakInfo = {
@@ -109,6 +110,7 @@ export default class Game {
 		};
 		this.ws.onmessage = (event) => {
 			let data = JSON.parse(event.data);
+			console.log(this.trialNo, this.stage, this.block);
 			switch (data.stage) {
 				case "practice":
 					switch (data.type) {
@@ -407,7 +409,7 @@ export default class Game {
 					}
 					break;
 				case "endExp":
-					loadEndGame("main");
+					loadEndGame("main", this.ws);
 					break;
 			}
 		}
@@ -422,7 +424,7 @@ export default class Game {
 				let breakText = "";
 				breakText = `<div align="center">
 				<p> 
-				You have completed ${this.trialNo} of 20 trials in this block. Please take a 6 second break.
+				You have completed ${this.trialNo} of ${this.expConsts.blockLength} trials in this block. Please take a 6 second break.
 				</p>
 				<p>
 				You completed ${data.P1completed} out of 8 tasks in 6 seconds.
@@ -453,7 +455,7 @@ export default class Game {
 				let breakText = "";
 				breakText = `<div align="center">
 				<p> 
-				You have completed ${this.trialNo} of 20 trials in this block. Please take a 6 second break.
+				You have completed ${this.trialNo} of ${this.expConsts.blockLength} trials in this block. Please take a 6 second break.
 				</p>
 				<p>
 				You completed ${data.P1completed} tasks and your partner completed ${data.P2completed} tasks out of 8 <br>

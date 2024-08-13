@@ -1,0 +1,1068 @@
+[
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 835,
+      "y": 321,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 857
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 837,
+      "y": 305,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 860
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 837,
+      "y": 299,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 869
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 843,
+      "y": 276,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 887
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 850,
+      "y": 252,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 903
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 857,
+      "y": 224,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 921
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 867,
+      "y": 194,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 936
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 870,
+      "y": 174,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 954
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 873,
+      "y": 164,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 970
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 876,
+      "y": 147,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 987
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 879,
+      "y": 126,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1005
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 879,
+      "y": 115,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1021
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 878,
+      "y": 110,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1036
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 879,
+      "y": 95,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1055
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 879,
+      "y": 89,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1069
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 876,
+      "y": 71,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1086
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 873,
+      "y": 61,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1103
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 870,
+      "y": 43,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1119
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 867,
+      "y": 23,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1137
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 867,
+      "y": 12,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1154
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    },
+    "p1Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "p2Screen": {
+      "width": 1408,
+      "height": 732
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 866,
+      "y": 3,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1171
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 375,
+      "y": 29,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1961
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 375,
+      "y": 54,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1977
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 368,
+      "y": 172,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1987
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 0,
+      "x": 363,
+      "y": 253,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 2003
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 18,
+      "x": 363,
+      "y": 538,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1913
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 18,
+      "x": 329,
+      "y": 516,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1919
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 18,
+      "x": 293,
+      "y": 481,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1936
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 18,
+      "x": 239,
+      "y": 403,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1953
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 18,
+      "x": 197,
+      "y": 356,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1970
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 18,
+      "x": 153,
+      "y": 309,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1985
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 18,
+      "x": 104,
+      "y": 256,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 2003
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 378,
+      "y": 33,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1096
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 392,
+      "y": 128,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1114
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 418,
+      "y": 240,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1130
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 429,
+      "y": 312,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1148
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 450,
+      "y": 384,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1164
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 452,
+      "y": 421,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1182
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 457,
+      "y": 438,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1198
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 461,
+      "y": 452,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1214
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  },
+  {
+    "player1": {
+      "trialNo": 23,
+      "x": 461,
+      "y": 458,
+      "stage": "game",
+      "block": "collab",
+      "timestamp": 1232
+    },
+    "p1Screen": {
+      "width": 924,
+      "height": 732
+    },
+    "p2Screen": {
+      "width": 0,
+      "height": 0
+    },
+    "player2": {
+      "trialNo": 0,
+      "x": 0,
+      "y": 0,
+      "stage": "",
+      "block": "",
+      "timestamp": 0
+    }
+  }
+]

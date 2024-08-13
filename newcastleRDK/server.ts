@@ -135,14 +135,14 @@ let mousePos: mouseTracking = {
 };
 
 const expValues = {
-	trials: 40,
+	trials: 60,
 	trialLength: 6,
 	coherence: [0.1, 0.2, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9],
 	directions: ["left", "right"],
 	block: ["sep", "collab"],
-	breakLength: 6,
+	breakLength: 2,
 	dataPath: "data/",
-	blockLength: 20,
+	blockLength: 30,
 	practiceTrials: 10,
 	practiceLength1: 12,
 	practiceLength2: 6,
@@ -153,7 +153,7 @@ const expValues = {
 REMEBER TO REMOVE OR CHANGE THIS
 */
 const testConsts = {
-	skipIntro: false,
+	skipIntro: true,
 };
 /*
 Base RDK is used to reset the state between trials and blocks. 

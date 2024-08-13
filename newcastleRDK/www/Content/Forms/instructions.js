@@ -232,7 +232,7 @@ If you would like more information or have any questions, please contact Luke Ru
 </div>`;
 
 let endGameHandler = null;
-function loadEndGame(targetElementId) {
+function loadEndGame(targetElementId, ws) {
 	const targetElement = document.getElementById(targetElementId);
 	if (targetElement) {
 		targetElement.innerHTML = endGameHTML;
@@ -241,7 +241,7 @@ function loadEndGame(targetElementId) {
 		}
 		endGameHandler = function (event) {
 			if (event.key === "Enter") {
-				handleRedirect();
+				handleRedirect(ws);
 			}
 		};
 		document.addEventListener("keydown", endGameHandler);
