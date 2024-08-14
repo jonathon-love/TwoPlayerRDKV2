@@ -23,44 +23,6 @@ const port = 3000;
 
 app.use(express.static("www"));
 
-// Serve files for download from the "data" directory
-app.use("/data", express.static("data"));
-
-// Route to list all files in the "data" directory
-app.get("/files", (req, res) => {
-	const directoryPath = path.join(__dirname, "data");
-
-	fs.readdir(directoryPath, (err, files) => {
-		if (err) {
-			return res.status(500).send("Unable to scan directory: " + err);
-		}
-
-		let fileList = "<h1>Available Files for Download</h1><ul>";
-
-		files.forEach((file) => {
-			const filePath = path.join(directoryPath, file);
-
-			fs.stat(filePath, (err, stats) => {
-				if (err) {
-					return res.status(500).send("Unable to get file stats: " + err);
-				}
-
-				// Format the modification date
-				const modificationDate = new Date(stats.mtime).toLocaleDateString();
-
-				// Append file with its modification date to the list
-				fileList += `<li><a href="/data/${file}" download>${file}</a> (added: ${modificationDate})</li>`;
-
-				// Send the response only after all files are processed
-				if (files.indexOf(file) === files.length - 1) {
-					fileList += "</ul>";
-					res.send(fileList);
-				}
-			});
-		});
-	});
-});
-
 const server = app.listen(port, () => {
 	console.log("Server started on http://localhost:" + port);
 });
@@ -1593,7 +1555,6 @@ function practiceCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.stage,
 					data.block
 				);
-				endTrialEarly(state, data.block, "player1");
 			}
 			if (ws === connections.player2) {
 				checkResponse(
@@ -1606,7 +1567,6 @@ function practiceCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.stage,
 					data.block
 				);
-				endTrialEarly(state, data.block, "player2");
 			}
 			break;
 		case "destroy":
@@ -1711,7 +1671,6 @@ function gameCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.stage,
 					data.block
 				);
-				endTrialEarly(state, data.block, "player1");
 			}
 			if (ws === connections.player2) {
 				checkResponse(
@@ -1724,7 +1683,6 @@ function gameCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.stage,
 					data.block
 				);
-				endTrialEarly(state, data.block, "player2");
 			}
 			break;
 	}

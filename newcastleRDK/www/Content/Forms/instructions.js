@@ -11,8 +11,8 @@ const instructionsHTML = `
 <p> In this experiment, you will be asked to select an image displaying a number of dots moving on the screen. Within this image, some of the dots will be moving in the same direction (either left or right).
  and others will be moving in a random direction. Your task is to identify the direction in which the majority of the dots are moving. This will vary from very easy, where many of the dots are moving
  in the same direction, to very difficult, where only a few dots are moving in the same direction, responding as quickly and accurately as you can.</p>
-<p> There are two blocks consisting of 20 6-second trials, 40 trials in total. In one block you will perform this by yourself, and in the other you will be paired with another participant. <br>
-The experiment will take roughly 20 minutes to complete. </p>
+<p> There are two blocks consisting of 30 6-second trials, 60 trials in total. In one block you will perform this by yourself, and in the other you will be paired with another participant. <br>
+The experiment will take roughly 25 minutes to complete. </p>
 <p> We appreciate your participation</p>
 <p> Please press enter to view the practice instructions </p>
 </div>
