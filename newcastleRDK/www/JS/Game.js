@@ -39,6 +39,7 @@ export default class Game {
 		this.mouseOverHandler = this.mouseOverHandler.bind(this);
 		this.mouseOutHandler = this.mouseOutHandler.bind(this);
 		this.clickHandler = this.clickHandler.bind(this);
+		this.drawTimeout = null;
 		this.generateDotMotionAperture = this.generateDotMotionAperture.bind(this);
 		this.recordMousepos = this.recordMousepos.bind(this);
 		this.responseHandler = null;
@@ -172,6 +173,9 @@ export default class Game {
 							this.restoreImages(this.divs);
 							break;
 						case "break":
+							if (this.breakTimeout) {
+								clearTimeout(this.breakTimeout);
+							}
 							this.removeEventListeners(this.divs.uncompleted);
 							this.stopAnimation();
 							this.clearImageDivs();
@@ -238,7 +242,6 @@ export default class Game {
 							this.restoreImages(this.divs);
 							break;
 						case "newDirection":
-							this.dotTimestamp = Date.now();
 							this.drawNewDirection(
 								data.index,
 								this.divs.uncompleted,
@@ -254,6 +257,9 @@ export default class Game {
 							this.restoreImages(this.divs);
 							break;
 						case "break":
+							if (this.breakTimeout) {
+								clearTimeout(this.breakTimeout);
+							}
 							this.removeEventListeners(this.divs.uncompleted);
 							this.stopAnimation();
 							this.clearImageDivs();
@@ -928,14 +934,10 @@ export default class Game {
 		document.removeEventListener("keydown", this.responseHandler);
 		this.responseHandler = null;
 
-		setTimeout(() => {
-			if (this.breakdiv) {
-				return;
-			} else {
-				this.dotTimestamp = Date.now();
-				this.generateDotMotionAperture(Index, divlist, expConsts, direction);
-				this.responseHandler = this.addResponseHandler(Index);
-			}
+		this.drawTimeout = setTimeout(() => {
+			this.dotTimestamp = Date.now();
+			this.generateDotMotionAperture(Index, divlist, expConsts, direction);
+			this.responseHandler = this.addResponseHandler(Index);
 		}, expConsts.pauseDuration);
 	}
 	drawDot(x, y) {
@@ -1078,6 +1080,7 @@ export default class Game {
 		this.canvas.height = window.innerHeight;
 	}
 	generateDotMotionAperture(divID, divlist, expConsts, direction) {
+		console.log(this.responseHandler);
 		// Clear previous drawings
 		this.currentlyCompleting = true;
 		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);

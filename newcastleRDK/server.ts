@@ -884,7 +884,7 @@ function checkResponse(
 	}
 }
 function resetStateonConnection(data: State) {
-	let gameNo = data.gameNo;
+	let gameNo = data.gameNo + 1;
 	let newState = Object.assign({}, baseState);
 	newState.gameNo = gameNo;
 	return newState;
