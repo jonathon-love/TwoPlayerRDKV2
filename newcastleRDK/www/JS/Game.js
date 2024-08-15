@@ -27,6 +27,7 @@ export default class Game {
 				type: "instructionsComplete",
 			})
 		);
+		console.log("Luke chnages made 1508 11:21pm");
 		this.container = document.getElementById(containerId);
 		this.clearContainer();
 		this.canvas = document.createElement("canvas");
