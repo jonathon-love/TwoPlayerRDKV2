@@ -11,7 +11,7 @@ const instructionsHTML = `
 <p> In this experiment, you will be asked to select an image displaying a number of dots moving on the screen. Within this image, some of the dots will be moving in the same direction (either left or right).
  and others will be moving in a random direction. Your task is to identify the direction in which the majority of the dots are moving. This will vary from very easy, where many of the dots are moving
  in the same direction, to very difficult, where only a few dots are moving in the same direction, responding as quickly and accurately as you can.</p>
-<p> There are two blocks consisting of 30 6-second trials, 60 trials in total. In one block you will perform this by yourself, and in the other you will be paired with another participant. <br>
+<p> There are two blocks consisting of 30 trials 6 seconds in length, 60 trials in total. In one block you will perform this by yourself, and in the other you will be paired with another participant. <br>
 The experiment will take roughly 25 minutes to complete. </p>
 <p> We appreciate your participation</p>
 <p> Please press enter to view the practice instructions </p>
@@ -52,9 +52,9 @@ const practiceInstructionsHTML = `
 <div class = "practiceInstructions" align="center">
 <p> In this block, you will complete 10 trials, 5 by yourself and 5 with your partner. You are free to select the order in which you complete the different dot motion difficulties. <br>
 Initially, the trials will be 12 seconds with a 12 second break. Later it will switch to 6 second trials with a 6 second break, matching the experiment. <br>
-When you think you know which direction the dots are moving in, you can respond with "Z" for left and "X" for right. <br>
+Here, you will use the mouse to select a difficulty level by clicking on it, then responding with either "Z" for left or "X" for right when you think you know which direction the dots are moving. <br>
 If you respond incorrectly, there will be a 500ms delay before you can respond again. <br>
-Please try and complete each trial as quickly and accurately as possible. <br>
+Please try and complete each task as quickly and accurately as possible. <br>
 Please enter to begin the block
 </p>
 </div>
@@ -97,9 +97,9 @@ const sepInstructionsHTML = `
 </div>
 <div class = "sepInstructions align="center">
 <p> 
-In this block, you will complete the 20 trials by yourself. You are free to select the order in which you complete the different dot motion difficulties. 
+In this block, you will complete the 30 trials by yourself. You are free to select the order in which you complete the different dot motion difficulties. 
 Each trial will last 6 seconds, with a 6 second break inbetween trials. <br>
-Remember to respond with "Z" for left and "X" for right, and if you respond incorrectly there is a 500ms penalty!
+Remember to select the difficulty by clicking, and responding with "Z" for left and "X" for right. Be careful of the 500ms incorrect penalty!
 </p>
 <p>
 Please try and complete each trial as quickly and accurately as possible. <br>
@@ -162,7 +162,7 @@ const collabInstructionsHTML = `
 <div class = "collabInstructions" align="center">
 <p> In this block, you will complete 20 trials paired with another participant. You are free to select the order in which you complete the different dot motion difficulties, although you cannot complete one that your partner is completing, 
 or has already completed. Each trial will last 6 seconds, with a 6 second break inbetween trials. <br> 
-Remember to respond with "Z" for left and "X" for right, and if you respond incorrectly there is a 500ms penalty! </p>
+Remember to select the difficulty by clicking, and responding with "Z" for left and "X" for right. Be careful of the 500ms incorrect penalty! </p>
 <p> Please try and complete each trial as quickly and accurately as possible. </p> 
 <p> Please press enter to begin the block </p>
 `;

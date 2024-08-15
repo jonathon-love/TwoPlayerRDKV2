@@ -60,7 +60,7 @@ export default class Game {
 		// Reaction time vars below
 		this.breakInfo = {
 			p1Completed: 0,
-			bp2Completed: 0,
+			p2Completed: 0,
 			completed: 0,
 		};
 		this.trialNo = 0;
@@ -138,15 +138,15 @@ export default class Game {
 							this.dotTimestamp = Date.now();
 							this.currentlyCompleting = true;
 							this.removeOtherDivs(this.divs.uncompleted, data.data);
+							this.responseHandler = this.addResponseHandler(
+								data.data,
+								this.state
+							);
 							this.generateDotMotionAperture(
 								data.data,
 								this.divs.uncompleted,
 								this.expConsts,
 								this.state.RDK.direction[data.data]
-							);
-							this.responseHandler = this.addResponseHandler(
-								data.data,
-								this.state
 							);
 							break;
 						case "completed":
@@ -173,8 +173,8 @@ export default class Game {
 							this.restoreImages(this.divs);
 							break;
 						case "break":
-							if (this.drawTimeout) {
-								clearTimeout(this.drawTimeout);
+							if (this.breakTimeout) {
+								clearTimeout(this.breakTimeout);
 							}
 							this.removeEventListeners(this.divs.uncompleted);
 							this.stopAnimation();
@@ -187,17 +187,11 @@ export default class Game {
 							break;
 						case "blockBreak":
 							document.removeEventListener("mousemove", this.recordMousepos);
-							if (this.drawTimeout) {
-								clearTimeout(this.drawTimeout);
-							}
 							this.block = "collab";
 							this.breakdiv = this.displayBlockBreak(this.stage, this.block);
 							break;
 						case "practiceEnd":
 							this.stage = "game";
-							if (this.drawTimeout) {
-								clearTimeout(this.drawTimeout);
-							}
 							document.removeEventListener("mousemove", this.recordMousepos);
 							this.displayBlockInstructions(this.stage, data.data);
 							break;
@@ -229,16 +223,17 @@ export default class Game {
 							this.dotTimestamp = Date.now();
 							this.currentlyCompleting = true;
 							this.removeOtherDivs(this.divs.uncompleted, data.data);
+							this.responseHandler = this.addResponseHandler(
+								data.data,
+								this.state
+							);
 							this.generateDotMotionAperture(
 								data.data,
 								this.divs.uncompleted,
 								this.expConsts,
 								this.state.RDK.direction[data.data]
 							);
-							this.responseHandler = this.addResponseHandler(
-								data.data,
-								this.state
-							);
+
 							break;
 						case "completed":
 							this.choiceTimestamp = Date.now();
