@@ -173,10 +173,10 @@ let dataArray: Array<any> = [];
 let mouseArray: Array<any> = [];
 let practiceTrialsDirections: Array<Array<string>> = [];
 let trialsDirections: Array<Array<string>> = [];
-let p1Ready = false;
 let timeStamp = 0;
 let baseState = deepCopy(state);
 let trialTimeout: NodeJS.Timeout | null = null;
+let p1Ready = false;
 let p2Ready = false;
 let p1TrialReady = false;
 let p2TrialReady = false;
@@ -189,8 +189,6 @@ let p2SkipReady = false;
 let blocks: Array<string> = [];
 let p1sepInstruction = false;
 let p2sepInstruction = false;
-let p1collabInstruction = false;
-let p2collabInstruction = false;
 
 /*
 functions start below here
@@ -910,6 +908,20 @@ function checkResponse(
 	}
 }
 function resetStateonConnection(data: State) {
+	p1Ready = false;
+	p2Ready = false;
+	p1TrialReady = false;
+	p2TrialReady = false;
+	P1InstructionsFinished = false;
+	P2InstructionsFinished = false;
+	p1PracticeReady = false;
+	p2PracticeReady = false;
+	p1SkipReady = false;
+	p2SkipReady = false;
+	blocks = [];
+	p1sepInstruction = false;
+	p2sepInstruction = false;
+
 	let gameNo = data.gameNo + 1;
 	let newState = Object.assign({}, baseState);
 	newState.gameNo = gameNo;
