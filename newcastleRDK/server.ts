@@ -176,19 +176,22 @@ let trialsDirections: Array<Array<string>> = [];
 let timeStamp = 0;
 let baseState = deepCopy(state);
 let trialTimeout: NodeJS.Timeout | null = null;
-let p1Ready = false;
-let p2Ready = false;
-let p1TrialReady = false;
-let p2TrialReady = false;
-let P1InstructionsFinished = false;
-let P2InstructionsFinished = false;
-let p1PracticeReady = false;
-let p2PracticeReady = false;
-let p1SkipReady = false;
-let p2SkipReady = false;
 let blocks: Array<string> = [];
-let p1sepInstruction = false;
-let p2sepInstruction = false;
+let trackingObject = {
+	p1Ready: false,
+	p2Ready: false,
+	p1TrialReady: false,
+	p2TrialReady: false,
+	P1InstructionsFinished: false,
+	P2InstructionsFinished: false,
+	p1PracticeReady: false,
+	p2PracticeReady: false,
+	p1SkipReady: false,
+	p2SkipReady: false,
+	p1sepInstruction: false,
+	p2sepInstruction: false,
+};
+let trackingObjectCopy = deepCopy(trackingObject);
 
 /*
 functions start below here
@@ -908,20 +911,6 @@ function checkResponse(
 	}
 }
 function resetStateonConnection(data: State) {
-	p1Ready = false;
-	p2Ready = false;
-	p1TrialReady = false;
-	p2TrialReady = false;
-	P1InstructionsFinished = false;
-	P2InstructionsFinished = false;
-	p1PracticeReady = false;
-	p2PracticeReady = false;
-	p1SkipReady = false;
-	p2SkipReady = false;
-	blocks = [];
-	p1sepInstruction = false;
-	p2sepInstruction = false;
-
 	let gameNo = data.gameNo + 1;
 	let newState = Object.assign({}, baseState);
 	newState.gameNo = gameNo;
@@ -1402,20 +1391,21 @@ function handleIntroductionMessaging(
 			break;
 		case "completedInstructions":
 			if (connections.player1 === ws) {
-				P1InstructionsFinished = true;
+				trackingObject.P1InstructionsFinished = true;
 			}
 			if (connections.player2 === ws) {
-				P2InstructionsFinished = true;
+				trackingObject.P2InstructionsFinished = true;
 			}
-			if (P1InstructionsFinished && P2InstructionsFinished) {
+			if (
+				trackingObject.P1InstructionsFinished &&
+				trackingObject.P2InstructionsFinished
+			) {
 				connections.player1?.send(
 					JSON.stringify({ stage: "practice", message: "beginGame" })
 				);
 				connections.player2?.send(
 					JSON.stringify({ stage: "practice", message: "beginGame" })
 				);
-				P1InstructionsFinished = false;
-				P2InstructionsFinished = false;
 			}
 			break;
 	}
@@ -1424,11 +1414,11 @@ function practiceSepMessaging(data: any, ws: WebSocket, connections: any) {
 	switch (data.type) {
 		case "instructionsComplete":
 			if (connections.player1 === ws) {
-				p1PracticeReady = true;
+				trackingObject.p1PracticeReady = true;
 			} else if (connections.player2 === ws) {
-				p2PracticeReady = true;
+				trackingObject.p2PracticeReady = true;
 			}
-			if (p1PracticeReady && p2PracticeReady) {
+			if (trackingObject.p1PracticeReady && trackingObject.p2PracticeReady) {
 				state.stage = "practice";
 				practiceTrialsDirections = createTrials(state, "practice");
 				trialsDirections = createTrials(state, "exp");
@@ -1448,8 +1438,6 @@ function practiceSepMessaging(data: any, ws: WebSocket, connections: any) {
 					data.block
 				);
 				handlePracticeTrials(practiceTrialsDirections, "sep");
-				p1PracticeReady = false;
-				p2PracticeReady = false;
 			}
 			break;
 		case "mousePos":
@@ -1533,7 +1521,7 @@ function practiceCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.stage,
 					data.block
 				);
-				p1PracticeReady = true;
+				trackingObject.p1PracticeReady = true;
 			} else if (connections.player2 === ws) {
 				beginGame(
 					"player2",
@@ -1542,9 +1530,9 @@ function practiceCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.stage,
 					data.block
 				);
-				p2PracticeReady = true;
+				trackingObject.p2PracticeReady = true;
 			}
-			if (p1PracticeReady && p2PracticeReady) {
+			if (trackingObject.p1PracticeReady && trackingObject.p2PracticeReady) {
 				handlePracticeTrials(practiceTrialsDirections, "collab");
 			}
 			break;
@@ -1639,11 +1627,11 @@ function gameCollabMessaging(data: any, ws: WebSocket, connections: any) {
 	switch (data.type) {
 		case "instructionsComplete":
 			if (connections.player1 === ws) {
-				p1TrialReady = true;
+				trackingObject.p1TrialReady = true;
 			} else if (connections.player2 === ws) {
-				p2TrialReady = true;
+				trackingObject.p2TrialReady = true;
 			}
-			if (p1TrialReady && p2TrialReady) {
+			if (trackingObject.p1TrialReady && trackingObject.p2TrialReady) {
 				state = resetState(state, baseRDK, true);
 				beginGame(
 					"player1",
@@ -1660,8 +1648,6 @@ function gameCollabMessaging(data: any, ws: WebSocket, connections: any) {
 					data.block
 				);
 				startTrials(data.block);
-				p1TrialReady = false;
-				p2TrialReady = false;
 			}
 			break;
 		case "difficulty":
@@ -1736,12 +1722,12 @@ function gameSepMessaging(data: any, ws: WebSocket, connections: any) {
 	switch (data.type) {
 		case "instructionsComplete":
 			if (connections.player1 === ws) {
-				p1sepInstruction = true;
+				trackingObject.p1sepInstruction = true;
 			}
 			if (connections.player2 === ws) {
-				p2sepInstruction = true;
+				trackingObject.p2sepInstruction = true;
 			}
-			if (p1sepInstruction && p2sepInstruction) {
+			if (trackingObject.p1sepInstruction && trackingObject.p2sepInstruction) {
 				state = resetState(state, baseRDK, true);
 				state.stage = "game";
 				state.block = "sep";
@@ -1838,13 +1824,13 @@ wss.on("connection", function (ws) {
 		state.stage = "waitingRoom";
 		connections.player1.send(JSON.stringify({ stage: "waitingRoom" }));
 		handleNewPlayers("player1");
-		p1Ready = true;
+		trackingObject.p1Ready = true;
 	} else if (connections.player2 === null) {
 		state.stage = "waitingRoom";
 		connections.player2 = ws;
 		handleNewPlayers("player2");
 		connections.player2.send(JSON.stringify({ stage: "waitingRoom" }));
-		p2Ready = true;
+		trackingObject.p2Ready = true;
 	} else {
 		console.error("Too many players");
 	}
@@ -1862,6 +1848,7 @@ wss.on("connection", function (ws) {
 			state.startTime = startTime.toISOString();
 			state = resetStateonConnection(state);
 			mousePos = resetMouseState(mousePos);
+			trackingObject = deepCopy(trackingObjectCopy);
 			dataArray = [];
 			mouseArray = [];
 			state.stage = "intro";
@@ -1873,9 +1860,9 @@ wss.on("connection", function (ws) {
 				JSON.stringify({ stage: "intro", type: "consentForm" })
 			);
 		} else if (testConsts.skipIntro) {
-			p1SkipReady = true;
-			p2SkipReady = true;
-			if (p1SkipReady && p2SkipReady) {
+			trackingObject.p1SkipReady = true;
+			trackingObject.p2SkipReady = true;
+			if (trackingObject.p1SkipReady && trackingObject.p2SkipReady) {
 				state = resetStateonConnection(state);
 				state.RDK.coherence = shuffle(expValues.coherence);
 				skipToBlock("game", "sep");
