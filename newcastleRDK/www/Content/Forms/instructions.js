@@ -28,12 +28,10 @@ function loadInstructions(targetElementId, ws) {
 		if (!instructionEventListenerAttached) {
 			const keyPressHandler = (event) => {
 				if (event.key === "Enter") {
-					setTimeout(() => {
-						loadPracticeInstructions(targetElementId, ws);
-						// Remove the event listener
-						document.removeEventListener("keydown", keyPressHandler);
-						instructionEventListenerAttached = false;
-					}, 1000);
+					loadPracticeInstructions(targetElementId, ws);
+					// Remove the event listener
+					document.removeEventListener("keydown", keyPressHandler);
+					instructionEventListenerAttached = false;
 				}
 			};
 
