@@ -16,9 +16,9 @@ import { send } from "node:process";
 [X] add forced timeout
 
 PATH TO EXP:
-lukeserver.duckdns.org/lukeserver/
+lukespirit.duckdns.org/lukespirit/
 PATH TO DATA:
-lukeserver.duckdns.org/lukeserver/files/
+lukespirit.duckdns.org/data/
 */
 const app = express();
 const port = 3000;
