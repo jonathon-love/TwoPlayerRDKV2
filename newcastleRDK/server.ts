@@ -519,7 +519,7 @@ async function writeData(data: any, suffix: "A" | "B") {
 
 		// Define the filename and path using __dirname
 		const filename = `game${state.gameNo}${suffix}.json`;
-		const filePath = path.join(__dirname, expValues.dataPath, filename);
+		const filePath = path.join(expValues.dataPath, filename);
 
 		// Write the JSON string to a file
 		fs.writeFileSync(filePath, dataString, "utf8");
