@@ -1,6 +1,6 @@
 /*
-[] check and see if the block break info is actually shown or if it just jumps stright o instructions
-[] do one final check to see if everything switches and runs correctly all the way through.
+[X] check and see if the block break info is actually shown or if it just jumps stright o instructions
+[X] do one final check to see if everything switches and runs correctly all the way through.
 */
 
 import {
@@ -9,7 +9,7 @@ import {
 	loadEndGame,
 } from "../Content/Forms/instructions.js";
 export default class Game {
-	constructor(containerId, websocket, stage, block) {
+	constructor(containerId, websocket, stage, block, id, platform) {
 		/*
         Below setsup some of the initial variables for the game including the ids, 
         backgrounds colours and the canvas settings. 
@@ -19,6 +19,9 @@ export default class Game {
 		this.block = block;
 		this.stage = stage;
 		this.containerId = containerId;
+		this.id = id;
+		this.platform = platform;
+		console.log(this.id, this.platform);
 		this.currentlyCompleting = false;
 		this.ws.send(
 			JSON.stringify({
@@ -287,16 +290,7 @@ export default class Game {
 							if (this.drawTimeout) {
 								clearTimeout(this.drawTimeout);
 							}
-							if (data.plaform) {
-								this.handleInstructionsBreak(
-									data.stage,
-									data.block,
-									data.data,
-									data.platform
-								);
-							} else {
-								this.handleInstructionsBreak(data.stage, data.block, data.data);
-							}
+							this.handleInstructionsBreak(data.stage, data.block, data.data);
 							break;
 					}
 			}
@@ -409,7 +403,7 @@ export default class Game {
 			this.container.appendChild(div);
 		}
 	}
-	handleInstructionsBreak(stage, block, data, platform) {
+	handleInstructionsBreak(stage, block, data) {
 		if (stage === "game") {
 			switch (data) {
 				case "endBlock":
@@ -442,7 +436,7 @@ export default class Game {
 					}
 					break;
 				case "endExp":
-					loadEndGame("main", this.ws, platform);
+					loadEndGame("main", this.ws, this.id, this.platform);
 					break;
 			}
 		}

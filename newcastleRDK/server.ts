@@ -230,20 +230,6 @@ function createTimestamp(timestamp: number) {
 	let time = newTimestamp - timestamp;
 	return time;
 }
-function handleNewPlayers(playerID: "player1" | "player2") {
-	if (playerID === "player1") {
-		let id = assignID();
-		let newid = checkID(id);
-		usedIDS.push(newid);
-		state.player1.id = newid;
-	}
-	if (playerID === "player2") {
-		let id = assignID();
-		let newid = checkID(id);
-		usedIDS.push(newid);
-		state.player2.id = newid;
-	}
-}
 function randomChoice(arr: Array<any>) {
 	let choicesArray = [];
 	let choice = arr[Math.floor(Math.random() * arr.length)];
@@ -1351,7 +1337,6 @@ async function handleIntroductionMessaging(
 				state.player1.consent = true;
 				state.player1.age = Number(data.age);
 				state.player1.gender = data.gender;
-				state.player1.platform = data.platform;
 				connections.player1.send(
 					JSON.stringify({ stage: "intro", type: "instructions" })
 				);
@@ -1359,12 +1344,16 @@ async function handleIntroductionMessaging(
 				state.player2.consent = true;
 				state.player2.age = Number(data.age);
 				state.player2.gender = data.gender;
-				state.player2.platform = data.platform;
 				connections.player2.send(
 					JSON.stringify({ stage: "intro", type: "instructions" })
 				);
 			}
 			break;
+		case "participantInfo":
+			if (connections.player1 === ws) {
+				state.player1.id = data.id;
+				state.player1.platform = data.platform;
+			}
 		case "completedInstructions":
 			if (connections.player1 === ws) {
 				trackingObject.P1InstructionsFinished = true;
@@ -1806,13 +1795,11 @@ async function handleInitialConnection(
 		await sendMessage(connections.player1, message);
 		state.stage = "waitingRoom";
 		trackingObject.p1Ready = true;
-		handleNewPlayers("player1");
 	} else if (player === "player2") {
 		connections.player2 = ws;
 		await sendMessage(connections.player2, message);
 		state.stage = "waitingRoom";
 		trackingObject.p1Ready = true;
-		handleNewPlayers("player2");
 	}
 }
 async function handleExtraConnection(ws: WebSocket) {

@@ -232,7 +232,7 @@ If you would like more information or have any questions, please contact Luke Ru
 </div>`;
 
 let endGameHandler = null;
-function loadEndGame(targetElementId, ws, platform) {
+function loadEndGame(targetElementId, ws, id, platform) {
 	const targetElement = document.getElementById(targetElementId);
 	if (targetElement) {
 		targetElement.innerHTML = endGameHTML;
