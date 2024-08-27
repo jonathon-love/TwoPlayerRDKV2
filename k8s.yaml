@@ -135,7 +135,7 @@ spec:
             name: lukeserver
             port:
               number: 3000
-      - path: /(data/*)
+      - path: /(data/.*)
         pathType: Prefix
         backend:
           service:
